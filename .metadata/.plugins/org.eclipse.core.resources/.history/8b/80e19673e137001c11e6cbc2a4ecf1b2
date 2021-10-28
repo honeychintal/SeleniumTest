@@ -1,0 +1,25 @@
+package seleniumTests;
+
+import java.time.Duration;
+import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class Day2 {
+
+	public void test1()
+	{
+	       System.setProperty("webdriver.chrome.driver","E:\\SeleniumTest\\Selenium1\\Webdrivers\\chromedriver.exe");  
+           
+	       WebDriver driver= new ChromeDriver();  
+	           
+	       driver.navigate().to("www.javatpoint.com");   
+	       driver.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS);
+	        //Scroll down the webpage by 4500 pixels  
+	        JavascriptExecutor js = (JavascriptExecutor)driver;
+	        
+	        js.executeScript("scrollBy(0, 4500)");  
+	  }  
+}
